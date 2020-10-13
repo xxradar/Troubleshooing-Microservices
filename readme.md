@@ -24,3 +24,12 @@ or/and to verify
 ```
 kubectl get ns wwwdemo -o yaml
 ```
+## Check application connectivity  
+### Verify the IP address of a pod
+```
+calicoctl get workloadEndpoint --all-namespaces -o wide #You can find the cali network interface easily
+
+kubectl get po -o wide -A
+```
+
+
