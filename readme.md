@@ -31,7 +31,7 @@ calicoctl get workloadEndpoint --all-namespaces -o wide #You can find the cali n
 
 kubectl get po -o wide -A
 ```
-### tcpdump via kubectl patch
+### Tcpdump via kubectl patch
 ```
 vi patch.yaml
 
@@ -44,4 +44,26 @@ spec:
 ```
 ```
 ex. kubectl patch deployment nginx-deployment -n wwwdemo --patch "$(cat patch.yaml)"
+```
+
+### Tcpdump hostNetwork
+```
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+spec:
+  hostNetwork: true
+  containers:
+  - name: debug
+    image: docker.io/xxradar/hackon
+    command: ["bash"]
+    args: ["-c", "sleep 100"]
+  nodeSelector:
+    kubernetes.io/hostname: ip-10-11-2-123
+EOF
+```
+```
+kubectl exec -it debug -- bash
 ```
