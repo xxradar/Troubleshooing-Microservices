@@ -11,12 +11,12 @@ calicoctl get ippools
 
 ex. calicoctl get ippools default-ipv4-ippool -o yaml
 ```
-### Verify the IP address assignemt
+### Verify the IP address assignment
 ```
 calicoctl ipam show --show-blocks
 ```
 ### Verify pool annotations
-Annotate a namesmace to use an specific ippool (should be already done)
+Annotate a namesmace to use an specific ippool (should already be done)
 ```
 kubectl annotate namespace wwwdemo "cni.projectcalico.org/ipv4pools"='["demo-ipip-ippool"]'
 ```
