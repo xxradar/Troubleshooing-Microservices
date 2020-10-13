@@ -31,5 +31,17 @@ calicoctl get workloadEndpoint --all-namespaces -o wide #You can find the cali n
 
 kubectl get po -o wide -A
 ```
+### tcpdump via kubectl patch
+```
+vi patch.yaml
 
-
+spec:
+  template:
+    spec:
+      containers:
+      - name: tcpdumper
+        image: docker.io/dockersec/tcpdump
+```
+```
+kubectl patch deployment nginx-deployment -n wwwdemo --patch "$(cat patch.yaml)"
+```
