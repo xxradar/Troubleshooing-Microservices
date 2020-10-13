@@ -43,5 +43,5 @@ spec:
         image: docker.io/dockersec/tcpdump
 ```
 ```
-kubectl patch deployment nginx-deployment -n wwwdemo --patch "$(cat patch.yaml)"
+ex. kubectl patch deployment nginx-deployment -n wwwdemo --patch "$(cat patch.yaml)"
 ```
