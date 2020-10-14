@@ -1,5 +1,6 @@
 # Troubleshooting Microservices on K8S and Calico
-The examples are based on app-routable-demo https://github.com/xxradar/app_routable_demo.
+The examples are based on app-routable-demo https://github.com/xxradar/app_routable_demo.<br>
+It also requires your K8S to be setup with Calico and an default ippool (smaller then the PODcidr).
 
 ## Get to know your cluster
 ### Internode connectivity
