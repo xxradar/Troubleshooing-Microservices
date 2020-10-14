@@ -67,3 +67,15 @@ EOF
 ```
 kubectl exec -it debug -- bash
 ```
+## Debug Network Policies
+### Find the podSelector the network policy applies to 
+```
+kubectl get netpol access-zone1  -n app-routable-demo -o yaml #Find the podSelector 
+```
+### Find the pods the podSelector applies to
+```
+ex. kubectl get po -l app=nginx-zone1 -n app-routable-demo
+
+ex. kubectl get netpol access-zone6  -n app-routable-demo -o yaml
+kubectl get po -l app=echoserver-1 -n app-routable-demo
+```
