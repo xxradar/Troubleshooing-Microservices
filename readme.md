@@ -79,3 +79,8 @@ ex. kubectl get po -l app=nginx-zone1 -n app-routable-demo
 ex. kubectl get netpol access-zone6  -n app-routable-demo -o yaml
 kubectl get po -l app=echoserver-1 -n app-routable-demo
 ```
+### Find the name of the policies the labels applies to 
+```
+kubectl get netpol -A -o json | jq -r '.items[] | select(.spec.podSelector.matchLabels.app == "echoserver-1") | .metadata.name'
+```
+
