@@ -44,8 +44,11 @@ spec:
         image: docker.io/dockersec/tcpdump
 ```
 ```
-ex. kubectl patch deployment nginx-echoserver-1-deployment -n app-routable-demo --patch "$(cat patch.yaml)"
+kubectl patch deployment echoserver-1-deployment -n app-routable-demo --patch "$(cat patch.yaml)"
 ```
+``` 
+kubectl get pods -n app-routable-demo  #choose a pod
+ex. kubectl attach -n app-routable-demo echoserver-1-deployment-598f4c696b-44mwg
 
 ### Tcpdump hostNetwork
 ```
