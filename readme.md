@@ -74,6 +74,7 @@ spec:
     kubernetes.io/hostname: ip-10-11-2-123
 EOF
 ```
+Inside you can run ifconfig and/or tcpdump
 ```
 kubectl exec -it debug -- bash
 ```
