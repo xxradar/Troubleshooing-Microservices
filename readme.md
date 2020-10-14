@@ -49,6 +49,11 @@ kubectl patch deployment echoserver-1-deployment -n app-routable-demo --patch "$
 ``` 
 kubectl get pods -n app-routable-demo  #choose a pod
 ex. kubectl attach -n app-routable-demo echoserver-1-deployment-598f4c696b-44mwg
+```
+To undo the changes
+```
+kubectl rollout undo deployment/echoserver-1-deployment -n app-routable-demo
+```
 
 ### Tcpdump hostNetwork
 ```
