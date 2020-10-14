@@ -1,0 +1,14 @@
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  creationTimestamp: "2020-10-12T11:55:39Z"
+  name: demo-ipip-ippool
+  resourceVersion: "2091"
+  uid: 22826c95-b258-45fe-b913-25eb0578296f
+spec:
+  blockSize: 26
+  cidr: 192.168.32.0/20
+  ipipMode: Always
+  natOutgoing: true
+  nodeSelector: all()
+  vxlanMode: Never
