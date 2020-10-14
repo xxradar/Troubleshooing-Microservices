@@ -46,6 +46,7 @@ spec:
 ```
 kubectl patch deployment echoserver-1-deployment -n app-routable-demo --patch "$(cat patch.yaml)"
 ```
+To check the tcpdump logs
 ``` 
 kubectl get pods -n app-routable-demo  #choose a pod
 ex. kubectl attach -n app-routable-demo echoserver-1-deployment-598f4c696b-44mwg
