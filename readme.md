@@ -44,7 +44,7 @@ spec:
         image: docker.io/dockersec/tcpdump
 ```
 ```
-ex. kubectl patch deployment nginx-deployment -n wwwdemo --patch "$(cat patch.yaml)"
+ex. kubectl patch deployment nginx-echoserver-1-deployment -n app-routable-demo --patch "$(cat patch.yaml)"
 ```
 
 ### Tcpdump hostNetwork
