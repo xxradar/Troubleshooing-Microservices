@@ -33,6 +33,12 @@ calicoctl get workloadEndpoint --all-namespaces -o wide #You can find the cali n
 
 kubectl get po -o wide -A
 ```
+
+### Check the pod logs
+Find the correct pod name and retrieve teh logs
+```
+ex. kubectl logs -n app-routable-demo echoserver-1-deployment-598f4c696b-44mwg
+```
 ### Tcpdump via kubectl patch
 ```
 vi patch.yaml
