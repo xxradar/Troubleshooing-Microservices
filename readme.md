@@ -29,13 +29,13 @@ kubectl get ns wwwdemo -o yaml
 ## Check application connectivity  
 ### Verify the IP address of a pod
 ```
-calicoctl get workloadEndpoint --all-namespaces -o wide #You can find the cali network interface easily
+calicoctl get workloadEndpoint --all-namespaces -o wide #You can find the cali* network interface easily
 
 kubectl get po -o wide -A
 ```
 
 ### Check the pod logs
-Find the correct pod name and retrieve teh logs
+Find the correct pod name and retrieve the logs
 ```
 ex. kubectl logs -n app-routable-demo echoserver-1-deployment-598f4c696b-44mwg
 ```
@@ -64,6 +64,7 @@ kubectl rollout undo deployment/echoserver-1-deployment -n app-routable-demo
 ```
 
 ### Tcpdump hostNetwork
+Note: change the nodeSelector to match your K8S node
 ```
 kubectl apply -f - <<EOF
 apiVersion: v1
