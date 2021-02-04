@@ -17,7 +17,8 @@ ex. calicoctl get ippools default-ipv4-ippool -o yaml
 ```
 calicoctl ipam show --show-blocks
 ```
-### Verify pool annotations
+### Verify pool annotations 
+Note: only works when multiple ippools are defined
 Annotate a namesmace to use an specific ippool (should already be done)
 ```
 kubectl annotate namespace wwwdemo "cni.projectcalico.org/ipv4pools"='["demo-ipip-ippool"]'
