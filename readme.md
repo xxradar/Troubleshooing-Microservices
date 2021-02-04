@@ -5,6 +5,7 @@ It also requires your K8S to be setup with Calico and an default ippool (smaller
 ## Get to know your cluster
 ### Internode connectivity
 ```
+kubectl get nodes -o wide
 sudo calicoctl node status
 ```
 ### IPPools settings (NatOutgoing, Encapsulation, pool cidr and block 
